@@ -1,27 +1,52 @@
 import NutriTrackModel from "../models/nutritrackModel";
-import NutriPagesModel from "../models/NutriPagesModel";
 
 const NutriTrackPresenter = {
-  async getFoodRecommendations(inputFoodData, setLoading, setRecommendations) {
+  async getFoodRecommendations(inputFoodData, setLoading, setRecommendations, setError) {
     console.log("Presenter dipanggil dengan:", inputFoodData);
 
     setLoading(true);
+    setError(null);
 
-    const recommendations = await NutriTrackModel.getRecommendation(inputFoodData);
+    try {
+      const result = await NutriTrackModel.getRecommendation(inputFoodData);
+      console.log("Respon dari API:", result);
 
-    console.log("Rekomendasi diterima:", recommendations);
+      if (
+        !result ||
+        !Array.isArray(result.recommendations) ||
+        result.recommendations.length === 0
+      ) {
+        throw new Error("Format data rekomendasi tidak valid atau kosong");
+      }
 
-    setRecommendations(recommendations);
-    setLoading(false);
+      setRecommendations(result.recommendations);
+    } catch (error) {
+      console.error("Error saat mengambil rekomendasi:", error);
+      setError(error.message || "Terjadi kesalahan saat mengambil rekomendasi");
+      setRecommendations([]);
+    } finally {
+      setLoading(false);
+    }
   },
 
-  handleSeeMore(navigate, foodName, nutritionDetail) {
-    // Simpan data detail ke model
-    NutriPagesModel.setFoodDetail(foodName, nutritionDetail);
-    
-    // Navigasi ke halaman detail
-    navigate("/nutritrack/detail");
-  }
+  handleSeeMore(navigate, food) {
+    if (!food) return;
+
+    console.log("Navigasi ke detail makanan dengan:", food);
+
+    navigate("/NutriPages", {
+      state: {
+        food: {
+          name: food.name || "",
+          image: food.image || "",
+          calories: food.calories || null,
+          carbohydrate: food.carbohydrate || null,
+          fat: food.fat || null,
+          proteins: food.proteins || null,
+        },
+      },
+    });
+  },
 };
 
 export default NutriTrackPresenter;

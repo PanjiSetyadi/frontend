@@ -1,40 +1,19 @@
-class NutriPagesModel {
-  constructor() {
-    this.foodDetail = {
-      name: '',
-      nutrition: '',
-    };
-  }
+const NutriTrackModel = {
+  async getRecommendation(inputFoodData) {
+    const response = await fetch("http://localhost:5000/recommend", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(inputFoodData),
+    });
 
-  /**
-   * Menyimpan data makanan yang akan ditampilkan di halaman detail.
-   * @param {string} name - Nama makanan
-   * @param {string} nutrition - Deskripsi kandungan nutrisi
-   */
-  setFoodDetail(name, nutrition) {
-    this.foodDetail = {
-      name,
-      nutrition,
-    };
-  }
+    if (!response.ok) {
+      throw new Error("Gagal mengambil data dari server");
+    }
 
-  /**
-   * Mengambil data makanan yang tersimpan.
-   * @returns {{name: string, nutrition: string}}
-   */
-  getFoodDetail() {
-    return this.foodDetail;
-  }
+    return await response.json();
+  },
+};
 
-  /**
-   * Menghapus data yang tersimpan (optional).
-   */
-  clearFoodDetail() {
-    this.foodDetail = {
-      name: '',
-      nutrition: '',
-    };
-  }
-}
-
-export default new NutriPagesModel();
+export default NutriTrackModel;

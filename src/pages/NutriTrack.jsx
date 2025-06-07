@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 import NutriTrackModel from "../models/nutritrackModel";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import NutriTrackPresenter from "../presenter/NutritrackPresenter";
 
 const NutriTrack = () => {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const [searchQuery, setSearchQuery] = useState("");
   const [inputFood, setInputFood] = useState(null);
@@ -30,9 +30,9 @@ const NutriTrack = () => {
       }
 
       setInputFood(result.input_food || null);
-      setRecommendations(result.recommendations || []);
+      setRecommendations(Array.isArray(result.recommendations) ? result.recommendations : []);
     } catch (err) {
-      setError(err.message || "Terjadi kesalahan");
+      setError(err.message || "Terjadi kesalahan saat mengambil data.");
     } finally {
       setLoading(false);
     }
@@ -59,10 +59,13 @@ const NutriTrack = () => {
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
               className="w-full py-3 px-5 rounded-full shadow-md text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+              aria-label="Search food nutrition"
             />
             <button
               onClick={handleSearch}
+              aria-label="Search button"
               className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-green-700"
+              type="button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,10 +89,14 @@ const NutriTrack = () => {
 
         {/* Content Section */}
         <section className="max-w-6xl mx-auto">
-          {loading && <p className="text-center text-green-700">Loading...</p>}
-          {error && <p className="text-center text-red-600">{error}</p>}
+          {loading && (
+            <p className="text-center text-green-700 font-semibold">Loading...</p>
+          )}
+          {error && (
+            <p className="text-center text-red-600 font-semibold">{error}</p>
+          )}
 
-          {(inputFood || recommendations.length > 0) && (
+          {!loading && !error && allFoods.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
               {allFoods.map((food, index) => (
                 <div
@@ -112,25 +119,22 @@ const NutriTrack = () => {
 
                   <div className="p-4 flex flex-col justify-between flex-grow w-full">
                     <h3 className="text-base font-semibold text-green-800 mb-2">
-                      {food.name}
+                      {food.name || "Nama tidak tersedia"}
                     </h3>
                     <ul className="text-sm text-gray-700 space-y-1 text-left mb-4">
-                      <li>Kalori: {food.calories} kkal</li>
-                      <li>Protein: {food.proteins} g</li>
-                      <li>Lemak: {food.fat} g</li>
-                      <li>Karbohidrat: {food.carbohydrate} g</li>
+                      <li>Kalori: {food.calories ?? "-"} kkal</li>
+                      <li>Protein: {food.proteins ?? "-"} g</li>
+                      <li>Lemak: {food.fat ?? "-"} g</li>
+                      <li>Karbohidrat: {food.carbohydrate ?? "-"} g</li>
                     </ul>
                     <button
                       className="bg-green-700 text-white py-2 rounded-full hover:bg-green-800 text-sm w-full"
                       onClick={() =>
-                        NutriTrackPresenter.handleSeeMore(
-                          navigate,
-                          food.name,
-                          food.nutritionDetail
-                        )
+                        NutriTrackPresenter.handleSeeMore(navigate, food)
                       }
+                      aria-label={`Lihat detail ${food.name}`}
                     >
-                      Selengkapnya »
+                      Selengkapnya &raquo;
                     </button>
                   </div>
                 </div>
@@ -138,8 +142,10 @@ const NutriTrack = () => {
             </div>
           )}
 
-          {!loading && !error && recommendations.length === 0 && inputFood && (
-            <p className="text-center text-gray-700">Tidak ada rekomendasi ditemukan.</p>
+          {!loading && !error && allFoods.length === 0 && (
+            <p className="text-center text-gray-700">
+              Tidak ada data makanan yang ditemukan. Silakan coba pencarian lain.
+            </p>
           )}
         </section>
       </main>
