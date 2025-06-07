@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import NutriTrackModel from "../models/nutritrackModel";
-import Navbar from "../components/navbar";
-import Footer from "../components/Footer";
 import NutriTrackPresenter from "../presenter/NutritrackPresenter";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const NutriTrack = () => {
   const navigate = useNavigate();
@@ -72,7 +71,6 @@ const NutriTrack = () => {
           {loading && <p className="text-center text-green-700">Loading...</p>}
           {error && <p className="text-center text-red-600">{error}</p>}
 
-          {/* Rekomendasi makanan dengan data nutrisi */}
           {(inputFood || recommendations.some((r) => !r.isSuggestion)) && (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
               {allFoods
@@ -109,11 +107,9 @@ const NutriTrack = () => {
                       <button
                         className="bg-green-700 text-white py-2 rounded-full hover:bg-green-800 text-sm w-full"
                         onClick={() =>
-                          NutriTrackPresenter.handleSeeMore(
-                            navigate,
-                            food.name,
-                            food.nutritionDetail
-                          )
+                          navigate("/nutripages", {
+                            state: { food },
+                          })
                         }
                       >
                         Selengkapnya »
@@ -124,7 +120,6 @@ const NutriTrack = () => {
             </div>
           )}
 
-          {/* Daftar saran */}
           {!loading && recommendations.length > 0 && !inputFood && (
             <div className="text-center text-sm text-gray-800 mt-4">
               <p className="font-semibold mb-2">Apakah maksud Anda salah satu dari berikut?</p>
@@ -149,10 +144,8 @@ const NutriTrack = () => {
               </ul>
             </div>
           )}
-
         </section>
       </main>
-
       <Footer />
     </div>
   );

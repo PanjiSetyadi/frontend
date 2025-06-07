@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './components/landing';
@@ -6,7 +5,7 @@ import Home from './components/home';
 import Scanner from './views/ScannerView';
 import BodyTrack from './views/BodyTrack';
 import NutriTrack from './pages/NutriTrack';
-import NutriPage from './pages/NutriPages';
+import NutriPages from './pages/NutriPages';
 import Login from './auth/login';
 import Register from './auth/register';
 import ForgotPassword from './auth/ForgotPassword';
@@ -28,7 +27,7 @@ const App = () => {
           <Route path="/scanner" element={<Scanner />} />
           <Route path="/BodyTrack" element={<BodyTrack />} />
           <Route path="/NutriTrack" element={<NutriTrack />} />
-          <Route path="/NutriPages" element={<Nutri-Page />} />
+          <Route path="/NutriPages" element={<NutriPages />} />
           <Route path="/about-team" element={<AboutTeam />} />
         </Route>
       </Routes>

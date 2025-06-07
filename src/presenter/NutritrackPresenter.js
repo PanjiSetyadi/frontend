@@ -1,5 +1,4 @@
 import NutriTrackModel from "../models/nutritrackModel";
-import NutriPagesModel from "../models/NutriPagesModel";
 
 const NutriTrackPresenter = {
   async handleSearchFood(query, { setLoading, setError, setInputFood, setRecommendations }) {
@@ -19,7 +18,7 @@ const NutriTrackPresenter = {
       const message = err.message || "Terjadi kesalahan";
       setError(message);
 
-      // 👇 Coba cari saran dalam bentuk array dari string
+      // Coba cari saran dalam bentuk array dari string
       const suggestionMatch = message.match(/\[(.*?)\]/); // cari array string dalam error
       if (suggestionMatch) {
         const suggestionList = suggestionMatch[1]
@@ -35,9 +34,8 @@ const NutriTrackPresenter = {
     }
   },
 
-  handleSeeMore(navigate, foodName, nutritionDetail) {
-    NutriPagesModel.setFoodDetail(foodName, nutritionDetail);
-    navigate("/nutritrack/detail");
+  handleSeeMore(navigate, food) {
+    navigate("/nutripages", { state: { food } });
   },
 };
 
