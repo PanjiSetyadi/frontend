@@ -106,7 +106,7 @@ const Register = () => {
                 type="submit"
                 className="w-30 bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-xl transition duration-300 gap-2"
               >
-                Sign In
+                Sign Up
               </button>
             )}
           </div>
