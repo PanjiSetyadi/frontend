@@ -36,10 +36,6 @@ const ForgotPassword = () => {
             alt="Nutrivision Logo"
             className="w-[250px] md:w-[350px] h-auto object-contain"
           />
-          <h1 className="text-green-800 font-bold text-xl mt-4">NUTRIVISION</h1>
-          <p className="text-sm text-gray-700 mt-2">
-            SCAN YOUR FOOD <br /> SHAPE YOUR HEALTH
-          </p>
         </div>
 
         {/* Right Side: Form */}
