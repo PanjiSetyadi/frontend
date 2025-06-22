@@ -147,7 +147,7 @@ const ScannerView = () => {
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-[#A0E0E8] mt-14 py-6 px-4 flex flex-col items-center">
+      <div className="min-h-screen bg-[#A6E3E9] mt-14 py-6 px-4 flex flex-col items-center">
         <h1 className="text-2xl font-extrabold text-[#2F4F4F] mb-6">NUTRIVISION</h1>
         <p className="text-sm font-semibold text-gray-700 mb-4 text-center">Scan Your Nutrition Here!</p>
 
