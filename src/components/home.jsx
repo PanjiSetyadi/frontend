@@ -42,7 +42,7 @@ const Homepage = () => {
       {/* Konten utama */}
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="h-[70vh] flex flex-col items-center justify-center bg-[#A6E3E8] text-center px-4 space-y-6">
+        <section className="h-[70vh] flex flex-col items-center justify-center bg-[#A6E3E9] text-center px-4 space-y-6">
           <h1 className="text-3xl md:text-4xl font-extrabold text-black">
             WELCOME TO <span className="text-green-700">NUTRIVISION</span>
           </h1>
