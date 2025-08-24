@@ -149,10 +149,10 @@ const ScannerView = () => {
       <Navbar />
       <div className="min-h-screen bg-[#A0E0E8] mt-14 py-6 px-4 flex flex-col items-center">
         <h1 className="text-2xl font-extrabold text-[#2F4F4F] mb-6">NUTRIVISION</h1>
-        <p className="text-sm font-semibold text-gray-700 mb-4 text-center">Scan Your Nutrition Here!</p>
+        <p className="text-sm font-semibold text-gray-700 mb-4 text-center">Scan nutrisi makananmu di sini!</p>
 
         <div className="bg-[#71C9CD] border-5 border-white p-4 rounded-xl w-full max-w-4xl mb-6">
-          <p className="text-center font-semibold text-2xl mb-5">Choose Your Goals</p>
+          <p className="text-center font-semibold text-2xl mb-5">Pilih tujuanmu</p>
           <div className="flex justify-around">
             {['sugar', 'fat', 'carbs'].map((item) => (
               <label key={item} className="flex flex-col items-center text-sm font-semibold text-[#333]">
@@ -180,7 +180,7 @@ const ScannerView = () => {
 
         <div className="flex flex-col items-center gap-4 mb-6">
           <label className="cursor-pointer text-white bg-[#3A7D44] hover:bg-[#2F4F4F] px-6 py-2 rounded-2xl text-sm font-bold">
-            Upload From Your Gallery
+            Upload dari galeri
             <input
               type="file"
               accept="image/*"
@@ -206,7 +206,7 @@ const ScannerView = () => {
           </div>
 
           <div className="text-left">
-            <h2 className="font-bold text-sm mb-1">Result</h2>
+            <h2 className="font-bold text-sm mb-1">Hasil</h2>
             <div className="w-full h-[160px] p-4 mt-1 bg-white rounded-md text-sm overflow-auto whitespace-pre-wrap font-medium text-gray-900">
               {warning}
             </div>
@@ -220,3 +220,4 @@ const ScannerView = () => {
 };
 
 export default ScannerView;
+
