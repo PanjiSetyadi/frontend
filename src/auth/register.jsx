@@ -49,10 +49,10 @@ const Register = () => {
 
       <div className="w-full md:w-1/2 px-6 md:px-16">
         <h2 className="text-3xl font-extrabold mb-2 text-gray-800 text-center">
-          WELCOME TO <span className="text-green-700">NUTRIVISION</span>
+          SELAMAT DATANG DI <span className="text-green-700">NUTRIVISION</span>
         </h2>
         <p className="text-gray-700 font-semibold text-lg text-center">
-          Scan Your Food, Shape Your Health
+          Pindai Makananmu, Bentuk Kesehatanmu
         </p>
         <p className="text-sm text-gray-800 font-bold mt-2 mb-6 text-center">
           Create your account
@@ -60,7 +60,7 @@ const Register = () => {
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="fullname" className="block mb-1 font-medium text-gray-800">Full Name</label>
+            <label htmlFor="fullname" className="block mb-1 font-medium text-gray-800">Nama Lengkap</label>
             <input
               type="text"
               id="fullname"
@@ -84,7 +84,7 @@ const Register = () => {
             />
           </div>
           <div>
-            <label htmlFor="password" className="block mb-1 font-medium text-gray-800">Password</label>
+            <label htmlFor="password" className="block mb-1 font-medium text-gray-800">kata Sandi</label>
             <input
               type="password"
               id="password"
@@ -106,16 +106,16 @@ const Register = () => {
                 type="submit"
                 className="w-30 bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-xl transition duration-300 gap-2"
               >
-                Sign In
+                Masuk
               </button>
             )}
           </div>
         </form>
 
         <div className="text-center mt-4">
-          <span className="text-sm text-gray-700">Already have an account?</span>{' '}
+          <span className="text-sm text-gray-700">Sudah punya akun?</span>{' '}
           <Link to="/login" className="text-green-700 font-semibold hover:underline">
-            Sign In
+            Masuk
           </Link>
         </div>
       </div>
@@ -124,3 +124,4 @@ const Register = () => {
 };
 
 export default Register;
+
