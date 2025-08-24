@@ -44,10 +44,10 @@ const Login = () => {
 
       <div className="w-full md:w-1/2 px-6 md:px-16 order-2 md:order-1">
         <h2 className="text-3xl font-extrabold mb-2 text-gray-800 text-center md:text-center">
-          WELCOME TO <span className="text-green-700">NUTRIVISION</span>
+          SELAMAT DATANG DI <span className="text-green-700">NUTRIVISION</span>
         </h2>
-        <p className="text-gray-700 text-lg font-semibold text-center md:text-center">Scan Your Food, Shape Your Health</p>
-        <p className="text-sm text-gray-800 font-bold mt-2 mb-6 text-center md:text-center">Login to your account</p>
+        <p className="text-gray-700 text-lg font-semibold text-center md:text-center">Pindai Makananmu, Bentuk Kesehatanmu</p>
+        <p className="text-sm text-gray-800 font-bold mt-2 mb-6 text-center md:text-center">Masuk ke akunmu</p>
 
         <form className="space-y-4" onSubmit={handleLogin}>
           <div>
@@ -66,7 +66,7 @@ const Login = () => {
             <div className="flex justify-between">
               <label htmlFor="password" className="block mb-1 font-medium text-gray-800">Password</label>
               <Link to="/forgot-password" className="text-sm text-green-700 hover:underline">
-                Forgot password?
+                Lupa Kata Sandi?
               </Link>
             </div>
             <input
@@ -89,7 +89,7 @@ const Login = () => {
                 type="submit"
                 className="w-30 bg-green-700 hover:bg-green-800 text-white py-2 rounded-xl transition duration-300 gap-2"
               >
-                Sign In
+                Masuk
               </button>
             )}
           </div>
@@ -98,7 +98,7 @@ const Login = () => {
         <p className="mt-6 text-sm text-center">
           Not a member?{' '}
           <Link to="/register" className="text-green-700 font-semibold hover:underline">
-            Register Now
+            Daftar Sekarang
           </Link>
         </p>
       </div>
@@ -107,3 +107,4 @@ const Login = () => {
 };
 
 export default Login;
+
