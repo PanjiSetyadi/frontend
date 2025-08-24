@@ -44,10 +44,10 @@ const Homepage = () => {
         {/* Hero Section */}
         <section className="h-[70vh] flex flex-col items-center justify-center bg-[#A6E3E8] text-center px-4 space-y-6">
           <h1 className="text-3xl md:text-4xl font-extrabold text-black">
-            WELCOME TO <span className="text-green-700">NUTRIVISION</span>
+            SELAMAT DATANG DI <span className="text-green-700">NUTRIVISION</span>
           </h1>
           <p className="text-xl md:text-2xl font-semibold text-black">
-            Scan Your Food, Shape Your Health
+            Pindai Makananmu, Bentuk Kesehatanmu
           </p>
           <blockquote className="text-lg md:text-xl text-black italic max-w-3xl">
             "Every time you eat or drink, you are either feeding disease or fighting it."
@@ -121,3 +121,4 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
