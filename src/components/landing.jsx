@@ -19,10 +19,10 @@ const Landing = () => {
         {/* Teks */}
         <div className="w-full lg:w-1/2 space-y-4 text-center lg:text-left">
           <h1 className="text-3xl font-bold">
-            WELCOME TO <span className="text-green-700">NUTRIVISION</span>
+            SELAMAT DATANG DI <span className="text-green-700">NUTRIVISION</span>
           </h1>
           <p className="text-lg font-semibold mt-4">
-            Scan Your Food, Shape Your Health
+            Pindai Makananmu, Bentuk Kesehatanmu
           </p>
           <p className="text-justify leading-relaxed mt-4">
             Nutrivision adalah platform cerdas yang membantu pengguna mengelola asupan nutrisi secara praktis
@@ -41,7 +41,7 @@ const Landing = () => {
         </h2>
         <Link to="/login">
           <button className="bg-green-700 text-white px-6 py-2 rounded-md hover:bg-green-800 transition">
-            Get Started
+            Mulai Sekarang
           </button>
         </Link>
       </div>
