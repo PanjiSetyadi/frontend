@@ -96,7 +96,7 @@ const Login = () => {
         </form>
 
         <p className="mt-6 text-sm text-center">
-          Not a member?{' '}
+          Belum punya akun?{' '}
           <Link to="/register" className="text-green-700 font-semibold hover:underline">
             Daftar Sekarang
           </Link>
@@ -107,4 +107,5 @@ const Login = () => {
 };
 
 export default Login;
+
 
