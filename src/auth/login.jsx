@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#a0e3f0] px-4 py-10">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-[#b2e3ea] px-4 py-10">
       <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0 order-1 md:order-2">
         <img
           src="/LOGO1.png"
@@ -107,5 +107,6 @@ const Login = () => {
 };
 
 export default Login;
+
 
 
