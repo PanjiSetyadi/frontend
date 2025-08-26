@@ -45,13 +45,13 @@ const ForgotPassword = () => {
         {/* Right Side: Form */}
         <div className="md:w-1/2 w-full">
           <h2 className="text-3xl font-extrabold text-gray-800 mb-1 text-center md:text-center">
-            WELCOME TO <span className="text-green-700">NUTRIVISION</span>
+            SELAMAT DATANG DI <span className="text-green-700">NUTRIVISION</span>
           </h2>
           <p className="text-gray-700 text-2xl font-semibold mb-4 text-center md:text-center">
-            Scan Your Food, Shape Your Health
+            Pindai Makananmu, Bentuk Kesehatanmu
           </p>
           <p className="text-sm text-gray-900 font-bold  mb-6 text-center md:text-center">
-            Forgot Your Password?
+            Lupa kata sandi?
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -73,13 +73,13 @@ const ForgotPassword = () => {
                 onClick={handleCancel}
                 className="px-4 py-2 text-gray-800 bg-white border border-gray-300 rounded-md hover:bg-gray-100 font-semibold transition"
               >
-                Cancel
+                Batal
               </button>
               <button
                 type="submit"
                 className="px-6 py-2 bg-green-700 text-white rounded-md hover:bg-green-800 font-semibold transition"
               >
-                Send Reset Link
+                Kirim Tautan Reset
               </button>
             </div>
           </form>
@@ -90,5 +90,6 @@ const ForgotPassword = () => {
 };
 
 export default ForgotPassword;
+
 
 
