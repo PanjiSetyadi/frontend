@@ -43,7 +43,7 @@ const BodyTrack = () => {
 
         <div className="min-h-screen bg-[#A6E3E8] flex items-center justify-center py-12">
           <div className="bg-white max-w-xl w-full p-8 rounded-3xl shadow-lg">
-            <h2 className="text-center text-2xl font-semibold mb-6 text-[#2F4F4F]">Input Your Body Track</h2>
+            <h2 className="text-center text-2xl font-semibold mb-6 text-[#2F4F4F]">Masukkan Data Body Track Anda</h2>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm text-gray-700">
               {/* Umur */}
