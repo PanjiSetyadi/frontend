@@ -29,13 +29,13 @@ const NutriTrack = () => {
       <main className="flex-grow pt-24 px-4">
         <section className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-black mb-6">
-            TRACK YOUR NUTRITION
+            LACAK NUTRISI ANDA
           </h1>
 
           <div className="max-w-xl mx-auto relative mb-8">
             <input
               type="text"
-              placeholder="Type the food name to see its nutritional info"
+              placeholder="Ketik nama makanan untuk melihat informasi nutrisi"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSearch()}
@@ -63,7 +63,7 @@ const NutriTrack = () => {
           </div>
 
           <h2 className="text-xl font-extrabold text-black">
-            YOUR RECOMMENDATION
+            REKOMENDASI ANDA
           </h2>
         </section>
 
