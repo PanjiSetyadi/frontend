@@ -33,7 +33,7 @@ const BodyTrack = () => {
     <>
       <Navbar />
       <div className="min-h-screen bg-[#A6E3E8] mt-14 py-6 px-4">
-        <h1 className="text-2xl font-extrabold text-center mt-4 mb-2 text-black">TRACK YOUR BODY HERE</h1>
+        <h1 className="text-2xl font-extrabold text-center mt-4 mb-2 text-black">LACAK BODYTRACK ANDA DISINI</h1>
         <p className="text-center font-bold text-sm text-black max-w-xl mx-auto mb-2">
           Masukkan data tubuhmu seperti berat badan, tinggi badan, usia, dan jenis kelamin untuk mengetahui status kesehatanmu — apakah kamu berada dalam kategori ideal, underweight, overweight, atau obesitas.
         </p>
